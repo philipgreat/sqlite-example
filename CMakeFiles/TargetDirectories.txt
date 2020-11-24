@@ -1,0 +1,3 @@
+/home/ubuntu/conan-test/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/conan-test/CMakeFiles/testConan.dir
+/home/ubuntu/conan-test/CMakeFiles/edit_cache.dir
