@@ -1,15 +1,26 @@
-#include <iostream>
-#include <sqlite3.h>
+#include <stdio.h>  
+#include <hiredis/hiredis.h>  
+  
+int main()  
+{  
+    redisContext* conn = redisConnect("127.0.0.1", 6379);  
+    if(conn->err) {
+	printf("connection error:%s\n", conn->errstr);  
+    	return 1;
+    
+    }
 
-int main() {
-  sqlite3 *db;
-  int rc = sqlite3_open("test.db", &db);
-  if (SQLITE_OK == rc) {
-    std::cout << "Opened database successfully iiiiii \n";
-    sqlite3_close(db);
-  } else {
-    std::cout << "Can't open database: " << sqlite3_errmsg(db) << "\n";
-  }
-  return 0;
+  
+    redisReply* reply = (redisReply*)redisCommand(conn, "set foo 1234");  
+    freeReplyObject(reply);  
+  
+    reply = (redisReply*)redisCommand(conn, "get foo");  
+  
+    printf("%s\n", reply->str);  
+    freeReplyObject(reply);  
+  
+    redisFree(conn);  
+  
+    return 0;  
 }
 

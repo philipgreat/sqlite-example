@@ -2,9 +2,11 @@
  "graph_lock": {
   "nodes": {
    "0": {
-    "options": "sqlite3:build_executable=True\nsqlite3:disable_gethostuuid=False\nsqlite3:enable_column_metadata=True\nsqlite3:enable_dbstat_vtab=False\nsqlite3:enable_default_secure_delete=False\nsqlite3:enable_explain_comments=False\nsqlite3:enable_fts3=False\nsqlite3:enable_fts3_parenthesis=False\nsqlite3:enable_fts4=False\nsqlite3:enable_fts5=False\nsqlite3:enable_json1=False\nsqlite3:enable_preupdate_hook=False\nsqlite3:enable_rtree=True\nsqlite3:enable_soundex=False\nsqlite3:enable_unlock_notify=True\nsqlite3:fPIC=True\nsqlite3:max_blob_size=1000000000\nsqlite3:omit_load_extension=False\nsqlite3:shared=False\nsqlite3:threadsafe=1\nsqlite3:use_alloca=False",
+    "options": "hiredis:fPIC=True\nhiredis:shared=False\nhiredis:with_ssl=False\nlua:compile_as_cpp=False\nlua:fPIC=True\nlua:shared=False\nsqlite3:build_executable=True\nsqlite3:disable_gethostuuid=False\nsqlite3:enable_column_metadata=True\nsqlite3:enable_dbstat_vtab=False\nsqlite3:enable_default_secure_delete=False\nsqlite3:enable_explain_comments=False\nsqlite3:enable_fts3=False\nsqlite3:enable_fts3_parenthesis=False\nsqlite3:enable_fts4=False\nsqlite3:enable_fts5=False\nsqlite3:enable_json1=False\nsqlite3:enable_preupdate_hook=False\nsqlite3:enable_rtree=True\nsqlite3:enable_soundex=False\nsqlite3:enable_unlock_notify=True\nsqlite3:fPIC=True\nsqlite3:max_blob_size=1000000000\nsqlite3:omit_load_extension=False\nsqlite3:shared=False\nsqlite3:threadsafe=1\nsqlite3:use_alloca=False",
     "requires": [
-     "1"
+     "1",
+     "2",
+     "3"
     ],
     "path": "../conanfile.txt",
     "context": "host"
@@ -13,6 +15,20 @@
     "ref": "sqlite3/3.32.3",
     "options": "build_executable=True\ndisable_gethostuuid=False\nenable_column_metadata=True\nenable_dbstat_vtab=False\nenable_default_secure_delete=False\nenable_explain_comments=False\nenable_fts3=False\nenable_fts3_parenthesis=False\nenable_fts4=False\nenable_fts5=False\nenable_json1=False\nenable_preupdate_hook=False\nenable_rtree=True\nenable_soundex=False\nenable_unlock_notify=True\nfPIC=True\nmax_blob_size=1000000000\nomit_load_extension=False\nshared=False\nthreadsafe=1\nuse_alloca=False",
     "package_id": "a1a40b157cb1a601d47593de2b083a3fa80d6934",
+    "prev": "0",
+    "context": "host"
+   },
+   "2": {
+    "ref": "hiredis/1.0.0",
+    "options": "fPIC=True\nshared=False\nwith_ssl=False",
+    "package_id": "d50a0d523d98c15bb147b18fa7d203887c38be8b",
+    "prev": "0",
+    "context": "host"
+   },
+   "3": {
+    "ref": "lua/5.4.1",
+    "options": "compile_as_cpp=False\nfPIC=True\nshared=False",
+    "package_id": "d50a0d523d98c15bb147b18fa7d203887c38be8b",
     "prev": "0",
     "context": "host"
    }

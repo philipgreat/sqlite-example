@@ -1,5 +1,8 @@
 [requires]
 sqlite3/3.32.3
+hiredis/1.0.0
+lua/5.4.1
+
 
 [generators]
 cmake

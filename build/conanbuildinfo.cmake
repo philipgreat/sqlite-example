@@ -73,6 +73,84 @@ conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_SQLITE3 "${CONAN_FRAMEWORKS_S
 set(CONAN_LIBS_SQLITE3 ${CONAN_PKG_LIBS_SQLITE3} ${CONAN_SYSTEM_LIBS_SQLITE3} ${CONAN_FRAMEWORKS_FOUND_SQLITE3})
 
 
+#################
+###  HIREDIS
+#################
+set(CONAN_HIREDIS_ROOT "/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b")
+set(CONAN_INCLUDE_DIRS_HIREDIS "/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/include")
+set(CONAN_LIB_DIRS_HIREDIS "/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/lib")
+set(CONAN_BIN_DIRS_HIREDIS )
+set(CONAN_RES_DIRS_HIREDIS )
+set(CONAN_SRC_DIRS_HIREDIS )
+set(CONAN_BUILD_DIRS_HIREDIS "/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/")
+set(CONAN_FRAMEWORK_DIRS_HIREDIS )
+set(CONAN_LIBS_HIREDIS hiredis)
+set(CONAN_PKG_LIBS_HIREDIS hiredis)
+set(CONAN_SYSTEM_LIBS_HIREDIS )
+set(CONAN_FRAMEWORKS_HIREDIS )
+set(CONAN_FRAMEWORKS_FOUND_HIREDIS "")  # Will be filled later
+set(CONAN_DEFINES_HIREDIS )
+set(CONAN_BUILD_MODULES_PATHS_HIREDIS )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_HIREDIS )
+
+set(CONAN_C_FLAGS_HIREDIS "")
+set(CONAN_CXX_FLAGS_HIREDIS "")
+set(CONAN_SHARED_LINKER_FLAGS_HIREDIS "")
+set(CONAN_EXE_LINKER_FLAGS_HIREDIS "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_HIREDIS_LIST "")
+set(CONAN_CXX_FLAGS_HIREDIS_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_HIREDIS_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_HIREDIS_LIST "")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_HIREDIS "${CONAN_FRAMEWORKS_HIREDIS}" "_HIREDIS" "")
+# Append to aggregated values variable
+set(CONAN_LIBS_HIREDIS ${CONAN_PKG_LIBS_HIREDIS} ${CONAN_SYSTEM_LIBS_HIREDIS} ${CONAN_FRAMEWORKS_FOUND_HIREDIS})
+
+
+#################
+###  LUA
+#################
+set(CONAN_LUA_ROOT "/home/ubuntu/.conan/data/lua/5.4.1/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b")
+set(CONAN_INCLUDE_DIRS_LUA "/home/ubuntu/.conan/data/lua/5.4.1/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/include")
+set(CONAN_LIB_DIRS_LUA "/home/ubuntu/.conan/data/lua/5.4.1/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/lib")
+set(CONAN_BIN_DIRS_LUA )
+set(CONAN_RES_DIRS_LUA )
+set(CONAN_SRC_DIRS_LUA )
+set(CONAN_BUILD_DIRS_LUA "/home/ubuntu/.conan/data/lua/5.4.1/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/")
+set(CONAN_FRAMEWORK_DIRS_LUA )
+set(CONAN_LIBS_LUA lua)
+set(CONAN_PKG_LIBS_LUA lua)
+set(CONAN_SYSTEM_LIBS_LUA dl m)
+set(CONAN_FRAMEWORKS_LUA )
+set(CONAN_FRAMEWORKS_FOUND_LUA "")  # Will be filled later
+set(CONAN_DEFINES_LUA "-DLUA_USE_DLOPEN"
+			"-DLUA_USE_POSIX")
+set(CONAN_BUILD_MODULES_PATHS_LUA )
+# COMPILE_DEFINITIONS are equal to CONAN_DEFINES without -D, for targets
+set(CONAN_COMPILE_DEFINITIONS_LUA "LUA_USE_DLOPEN"
+			"LUA_USE_POSIX")
+
+set(CONAN_C_FLAGS_LUA "")
+set(CONAN_CXX_FLAGS_LUA "")
+set(CONAN_SHARED_LINKER_FLAGS_LUA "")
+set(CONAN_EXE_LINKER_FLAGS_LUA "")
+
+# For modern cmake targets we use the list variables (separated with ;)
+set(CONAN_C_FLAGS_LUA_LIST "")
+set(CONAN_CXX_FLAGS_LUA_LIST "")
+set(CONAN_SHARED_LINKER_FLAGS_LUA_LIST "")
+set(CONAN_EXE_LINKER_FLAGS_LUA_LIST "")
+
+# Apple Frameworks
+conan_find_apple_frameworks(CONAN_FRAMEWORKS_FOUND_LUA "${CONAN_FRAMEWORKS_LUA}" "_LUA" "")
+# Append to aggregated values variable
+set(CONAN_LIBS_LUA ${CONAN_PKG_LIBS_LUA} ${CONAN_SYSTEM_LIBS_LUA} ${CONAN_FRAMEWORKS_FOUND_LUA})
+
+
 ### Definition of global aggregated variables ###
 
 set(CONAN_PACKAGE_NAME None)
@@ -87,7 +165,7 @@ set(CONAN_SETTINGS_COMPILER_VERSION "7")
 set(CONAN_SETTINGS_OS "Linux")
 set(CONAN_SETTINGS_OS_BUILD "Linux")
 
-set(CONAN_DEPENDENCIES sqlite3)
+set(CONAN_DEPENDENCIES sqlite3 hiredis lua)
 # Storing original command line args (CMake helper) flags
 set(CONAN_CMD_CXX_FLAGS ${CONAN_CXX_FLAGS})
 
@@ -95,19 +173,26 @@ set(CONAN_CMD_SHARED_LINKER_FLAGS ${CONAN_SHARED_LINKER_FLAGS})
 set(CONAN_CMD_C_FLAGS ${CONAN_C_FLAGS})
 # Defining accumulated conan variables for all deps
 
-set(CONAN_INCLUDE_DIRS "/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/include" ${CONAN_INCLUDE_DIRS})
-set(CONAN_LIB_DIRS "/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/lib" ${CONAN_LIB_DIRS})
+set(CONAN_INCLUDE_DIRS "/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/include"
+			"/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/include"
+			"/home/ubuntu/.conan/data/lua/5.4.1/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/include" ${CONAN_INCLUDE_DIRS})
+set(CONAN_LIB_DIRS "/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/lib"
+			"/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/lib"
+			"/home/ubuntu/.conan/data/lua/5.4.1/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/lib" ${CONAN_LIB_DIRS})
 set(CONAN_BIN_DIRS "/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/bin" ${CONAN_BIN_DIRS})
 set(CONAN_RES_DIRS  ${CONAN_RES_DIRS})
 set(CONAN_FRAMEWORK_DIRS  ${CONAN_FRAMEWORK_DIRS})
-set(CONAN_LIBS sqlite3 ${CONAN_LIBS})
-set(CONAN_PKG_LIBS sqlite3 ${CONAN_PKG_LIBS})
-set(CONAN_SYSTEM_LIBS pthread dl ${CONAN_SYSTEM_LIBS})
+set(CONAN_LIBS sqlite3 hiredis lua ${CONAN_LIBS})
+set(CONAN_PKG_LIBS sqlite3 hiredis lua ${CONAN_PKG_LIBS})
+set(CONAN_SYSTEM_LIBS pthread dl m ${CONAN_SYSTEM_LIBS})
 set(CONAN_FRAMEWORKS  ${CONAN_FRAMEWORKS})
 set(CONAN_FRAMEWORKS_FOUND "")  # Will be filled later
-set(CONAN_DEFINES  ${CONAN_DEFINES})
+set(CONAN_DEFINES "-DLUA_USE_DLOPEN"
+			"-DLUA_USE_POSIX" ${CONAN_DEFINES})
 set(CONAN_BUILD_MODULES_PATHS  ${CONAN_BUILD_MODULES_PATHS})
-set(CONAN_CMAKE_MODULE_PATH "/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/" ${CONAN_CMAKE_MODULE_PATH})
+set(CONAN_CMAKE_MODULE_PATH "/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/"
+			"/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/"
+			"/home/ubuntu/.conan/data/lua/5.4.1/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/" ${CONAN_CMAKE_MODULE_PATH})
 
 set(CONAN_CXX_FLAGS " ${CONAN_CXX_FLAGS}")
 set(CONAN_SHARED_LINKER_FLAGS " ${CONAN_SHARED_LINKER_FLAGS}")
@@ -200,7 +285,147 @@ macro(conan_define_targets)
                                                                   $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_SQLITE3_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_SQLITE3_MINSIZEREL_LIST}>
                                                                   $<$<CONFIG:Debug>:${CONAN_C_FLAGS_SQLITE3_DEBUG_LIST}  ${CONAN_CXX_FLAGS_SQLITE3_DEBUG_LIST}>)
 
-    set(CONAN_TARGETS CONAN_PKG::sqlite3)
+
+    set(_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES "${CONAN_SYSTEM_LIBS_HIREDIS} ${CONAN_FRAMEWORKS_FOUND_HIREDIS} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_HIREDIS}" "${CONAN_LIB_DIRS_HIREDIS}"
+                                  CONAN_PACKAGE_TARGETS_HIREDIS "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES}"
+                                  "" hiredis)
+    set(_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_HIREDIS_DEBUG} ${CONAN_FRAMEWORKS_FOUND_HIREDIS_DEBUG} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_DEBUG}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_HIREDIS_DEBUG}" "${CONAN_LIB_DIRS_HIREDIS_DEBUG}"
+                                  CONAN_PACKAGE_TARGETS_HIREDIS_DEBUG "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_DEBUG}"
+                                  "debug" hiredis)
+    set(_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_HIREDIS_RELEASE} ${CONAN_FRAMEWORKS_FOUND_HIREDIS_RELEASE} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELEASE}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_HIREDIS_RELEASE}" "${CONAN_LIB_DIRS_HIREDIS_RELEASE}"
+                                  CONAN_PACKAGE_TARGETS_HIREDIS_RELEASE "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELEASE}"
+                                  "release" hiredis)
+    set(_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_HIREDIS_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_HIREDIS_RELWITHDEBINFO} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELWITHDEBINFO}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_HIREDIS_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_HIREDIS_RELWITHDEBINFO}"
+                                  CONAN_PACKAGE_TARGETS_HIREDIS_RELWITHDEBINFO "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELWITHDEBINFO}"
+                                  "relwithdebinfo" hiredis)
+    set(_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_HIREDIS_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_HIREDIS_MINSIZEREL} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_MINSIZEREL}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_HIREDIS_MINSIZEREL}" "${CONAN_LIB_DIRS_HIREDIS_MINSIZEREL}"
+                                  CONAN_PACKAGE_TARGETS_HIREDIS_MINSIZEREL "${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_MINSIZEREL}"
+                                  "minsizerel" hiredis)
+
+    add_library(CONAN_PKG::hiredis INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::hiredis PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_HIREDIS} ${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_HIREDIS_LIST}>
+
+                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_HIREDIS_RELEASE} ${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELEASE}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_RELEASE_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_RELEASE_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_HIREDIS_RELEASE_LIST}>>
+
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_HIREDIS_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_RELWITHDEBINFO}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_RELWITHDEBINFO_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_RELWITHDEBINFO_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_HIREDIS_RELWITHDEBINFO_LIST}>>
+
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_HIREDIS_MINSIZEREL} ${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_MINSIZEREL}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_MINSIZEREL_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_MINSIZEREL_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_HIREDIS_MINSIZEREL_LIST}>>
+
+                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_HIREDIS_DEBUG} ${_CONAN_PKG_LIBS_HIREDIS_DEPENDENCIES_DEBUG}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_DEBUG_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_HIREDIS_DEBUG_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_HIREDIS_DEBUG_LIST}>>)
+    set_property(TARGET CONAN_PKG::hiredis PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_HIREDIS}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_HIREDIS_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_HIREDIS_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_HIREDIS_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_HIREDIS_DEBUG}>)
+    set_property(TARGET CONAN_PKG::hiredis PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_HIREDIS}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_HIREDIS_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_HIREDIS_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_HIREDIS_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_HIREDIS_DEBUG}>)
+    set_property(TARGET CONAN_PKG::hiredis PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_HIREDIS_LIST} ${CONAN_CXX_FLAGS_HIREDIS_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_HIREDIS_RELEASE_LIST} ${CONAN_CXX_FLAGS_HIREDIS_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_HIREDIS_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_HIREDIS_RELWITHDEBINFO_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_HIREDIS_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_HIREDIS_MINSIZEREL_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_HIREDIS_DEBUG_LIST}  ${CONAN_CXX_FLAGS_HIREDIS_DEBUG_LIST}>)
+
+
+    set(_CONAN_PKG_LIBS_LUA_DEPENDENCIES "${CONAN_SYSTEM_LIBS_LUA} ${CONAN_FRAMEWORKS_FOUND_LUA} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_LUA_DEPENDENCIES "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_LUA}" "${CONAN_LIB_DIRS_LUA}"
+                                  CONAN_PACKAGE_TARGETS_LUA "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES}"
+                                  "" lua)
+    set(_CONAN_PKG_LIBS_LUA_DEPENDENCIES_DEBUG "${CONAN_SYSTEM_LIBS_LUA_DEBUG} ${CONAN_FRAMEWORKS_FOUND_LUA_DEBUG} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_LUA_DEPENDENCIES_DEBUG "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_DEBUG}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_LUA_DEBUG}" "${CONAN_LIB_DIRS_LUA_DEBUG}"
+                                  CONAN_PACKAGE_TARGETS_LUA_DEBUG "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_DEBUG}"
+                                  "debug" lua)
+    set(_CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELEASE "${CONAN_SYSTEM_LIBS_LUA_RELEASE} ${CONAN_FRAMEWORKS_FOUND_LUA_RELEASE} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELEASE "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELEASE}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_LUA_RELEASE}" "${CONAN_LIB_DIRS_LUA_RELEASE}"
+                                  CONAN_PACKAGE_TARGETS_LUA_RELEASE "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELEASE}"
+                                  "release" lua)
+    set(_CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELWITHDEBINFO "${CONAN_SYSTEM_LIBS_LUA_RELWITHDEBINFO} ${CONAN_FRAMEWORKS_FOUND_LUA_RELWITHDEBINFO} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELWITHDEBINFO "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELWITHDEBINFO}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_LUA_RELWITHDEBINFO}" "${CONAN_LIB_DIRS_LUA_RELWITHDEBINFO}"
+                                  CONAN_PACKAGE_TARGETS_LUA_RELWITHDEBINFO "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELWITHDEBINFO}"
+                                  "relwithdebinfo" lua)
+    set(_CONAN_PKG_LIBS_LUA_DEPENDENCIES_MINSIZEREL "${CONAN_SYSTEM_LIBS_LUA_MINSIZEREL} ${CONAN_FRAMEWORKS_FOUND_LUA_MINSIZEREL} ")
+    string(REPLACE " " ";" _CONAN_PKG_LIBS_LUA_DEPENDENCIES_MINSIZEREL "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_MINSIZEREL}")
+    conan_package_library_targets("${CONAN_PKG_LIBS_LUA_MINSIZEREL}" "${CONAN_LIB_DIRS_LUA_MINSIZEREL}"
+                                  CONAN_PACKAGE_TARGETS_LUA_MINSIZEREL "${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_MINSIZEREL}"
+                                  "minsizerel" lua)
+
+    add_library(CONAN_PKG::lua INTERFACE IMPORTED)
+
+    # Property INTERFACE_LINK_FLAGS do not work, necessary to add to INTERFACE_LINK_LIBRARIES
+    set_property(TARGET CONAN_PKG::lua PROPERTY INTERFACE_LINK_LIBRARIES ${CONAN_PACKAGE_TARGETS_LUA} ${_CONAN_PKG_LIBS_LUA_DEPENDENCIES}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LUA_LIST}>
+
+                                                                 $<$<CONFIG:Release>:${CONAN_PACKAGE_TARGETS_LUA_RELEASE} ${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELEASE}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_RELEASE_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_RELEASE_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LUA_RELEASE_LIST}>>
+
+                                                                 $<$<CONFIG:RelWithDebInfo>:${CONAN_PACKAGE_TARGETS_LUA_RELWITHDEBINFO} ${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_RELWITHDEBINFO}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_RELWITHDEBINFO_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_RELWITHDEBINFO_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LUA_RELWITHDEBINFO_LIST}>>
+
+                                                                 $<$<CONFIG:MinSizeRel>:${CONAN_PACKAGE_TARGETS_LUA_MINSIZEREL} ${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_MINSIZEREL}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_MINSIZEREL_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_MINSIZEREL_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LUA_MINSIZEREL_LIST}>>
+
+                                                                 $<$<CONFIG:Debug>:${CONAN_PACKAGE_TARGETS_LUA_DEBUG} ${_CONAN_PKG_LIBS_LUA_DEPENDENCIES_DEBUG}
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,SHARED_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_DEBUG_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,MODULE_LIBRARY>:${CONAN_SHARED_LINKER_FLAGS_LUA_DEBUG_LIST}>
+                                                                 $<$<STREQUAL:$<TARGET_PROPERTY:TYPE>,EXECUTABLE>:${CONAN_EXE_LINKER_FLAGS_LUA_DEBUG_LIST}>>)
+    set_property(TARGET CONAN_PKG::lua PROPERTY INTERFACE_INCLUDE_DIRECTORIES ${CONAN_INCLUDE_DIRS_LUA}
+                                                                      $<$<CONFIG:Release>:${CONAN_INCLUDE_DIRS_LUA_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_INCLUDE_DIRS_LUA_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_INCLUDE_DIRS_LUA_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_INCLUDE_DIRS_LUA_DEBUG}>)
+    set_property(TARGET CONAN_PKG::lua PROPERTY INTERFACE_COMPILE_DEFINITIONS ${CONAN_COMPILE_DEFINITIONS_LUA}
+                                                                      $<$<CONFIG:Release>:${CONAN_COMPILE_DEFINITIONS_LUA_RELEASE}>
+                                                                      $<$<CONFIG:RelWithDebInfo>:${CONAN_COMPILE_DEFINITIONS_LUA_RELWITHDEBINFO}>
+                                                                      $<$<CONFIG:MinSizeRel>:${CONAN_COMPILE_DEFINITIONS_LUA_MINSIZEREL}>
+                                                                      $<$<CONFIG:Debug>:${CONAN_COMPILE_DEFINITIONS_LUA_DEBUG}>)
+    set_property(TARGET CONAN_PKG::lua PROPERTY INTERFACE_COMPILE_OPTIONS ${CONAN_C_FLAGS_LUA_LIST} ${CONAN_CXX_FLAGS_LUA_LIST}
+                                                                  $<$<CONFIG:Release>:${CONAN_C_FLAGS_LUA_RELEASE_LIST} ${CONAN_CXX_FLAGS_LUA_RELEASE_LIST}>
+                                                                  $<$<CONFIG:RelWithDebInfo>:${CONAN_C_FLAGS_LUA_RELWITHDEBINFO_LIST} ${CONAN_CXX_FLAGS_LUA_RELWITHDEBINFO_LIST}>
+                                                                  $<$<CONFIG:MinSizeRel>:${CONAN_C_FLAGS_LUA_MINSIZEREL_LIST} ${CONAN_CXX_FLAGS_LUA_MINSIZEREL_LIST}>
+                                                                  $<$<CONFIG:Debug>:${CONAN_C_FLAGS_LUA_DEBUG_LIST}  ${CONAN_CXX_FLAGS_LUA_DEBUG_LIST}>)
+
+    set(CONAN_TARGETS CONAN_PKG::sqlite3 CONAN_PKG::hiredis CONAN_PKG::lua)
 
 endmacro()
 

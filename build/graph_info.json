@@ -1,6 +1,30 @@
 {
  "options": [
   [
+   "hiredis:fPIC",
+   "True"
+  ],
+  [
+   "hiredis:shared",
+   "False"
+  ],
+  [
+   "hiredis:with_ssl",
+   "False"
+  ],
+  [
+   "lua:compile_as_cpp",
+   "False"
+  ],
+  [
+   "lua:fPIC",
+   "True"
+  ],
+  [
+   "lua:shared",
+   "False"
+  ],
+  [
    "sqlite3:build_executable",
    "True"
   ],

@@ -7,6 +7,8 @@
     os=Linux
 
 [requires]
+    hiredis/1.Y.Z
+    lua/5.Y.Z
     sqlite3/3.Y.Z
 
 [options]
@@ -23,9 +25,17 @@
     os_build=Linux
 
 [full_requires]
+    hiredis/1.0.0:d50a0d523d98c15bb147b18fa7d203887c38be8b
+    lua/5.4.1:d50a0d523d98c15bb147b18fa7d203887c38be8b
     sqlite3/3.32.3:a1a40b157cb1a601d47593de2b083a3fa80d6934
 
 [full_options]
+    hiredis:fPIC=True
+    hiredis:shared=False
+    hiredis:with_ssl=False
+    lua:compile_as_cpp=False
+    lua:fPIC=True
+    lua:shared=False
     sqlite3:build_executable=True
     sqlite3:disable_gethostuuid=False
     sqlite3:enable_column_metadata=True

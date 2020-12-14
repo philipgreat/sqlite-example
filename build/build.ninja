@@ -50,7 +50,7 @@ build cmake_object_order_depends_target_sq: phony
 build CMakeFiles/sq.dir/test_conan.cpp.o: CXX_COMPILER__sq ../test_conan.cpp || cmake_object_order_depends_target_sq
   DEP_FILE = CMakeFiles/sq.dir/test_conan.cpp.o.d
   FLAGS = -std=gnu++11
-  INCLUDES = -I/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/include
+  INCLUDES = -I/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/include -I/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/include
   OBJECT_DIR = CMakeFiles/sq.dir
   OBJECT_FILE_DIR = CMakeFiles/sq.dir
 
@@ -62,8 +62,8 @@ build CMakeFiles/sq.dir/test_conan.cpp.o: CXX_COMPILER__sq ../test_conan.cpp || 
 # Link the executable bin/sq
 
 build bin/sq: CXX_EXECUTABLE_LINKER__sq CMakeFiles/sq.dir/test_conan.cpp.o
-  LINK_LIBRARIES = -Wl,-rpath,/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/lib -lsqlite3 -lpthread -ldl
-  LINK_PATH = -L/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/lib
+  LINK_LIBRARIES = -Wl,-rpath,/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/lib:/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/lib -lsqlite3 -lhiredis -lpthread -ldl
+  LINK_PATH = -L/home/ubuntu/.conan/data/sqlite3/3.32.3/_/_/package/a1a40b157cb1a601d47593de2b083a3fa80d6934/lib  -L/home/ubuntu/.conan/data/hiredis/1.0.0/_/_/package/d50a0d523d98c15bb147b18fa7d203887c38be8b/lib
   OBJECT_DIR = CMakeFiles/sq.dir
   POST_BUILD = :
   PRE_LINK = :
